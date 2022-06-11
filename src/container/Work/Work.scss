@@ -1,0 +1,93 @@
+* .app__work-filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  div {
+    margin: 10px;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      background-color: var(--secondary-color);
+      color: white;
+    }
+
+    @media screen and (min-width: 2000px) {
+      padding: 1rem 2rem;
+      border-radius: 0.85rem;
+    }
+  }
+  .item-active {
+    background-color: var(--secondary-color);
+    color: white;
+  }
+}
+
+.app__work-img {
+  a {
+    img {
+      margin-top: 10px;
+    }
+  }
+}
+
+.app__work-portfolio {
+  position: relative;
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  .app__work-item {
+    margin: 50px;
+    padding: 20px 0 10px 0;
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: white;
+    width: 220px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.6s ease-in-out;
+
+    &:hover {
+      box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  div {
+    width: 200px;
+    text-align: center;
+    position: relative;
+
+    img {
+      height: 150px;
+      border-radius: 40px;
+      width: 80%;
+    }
+    .app__work-hover {
+      margin: auto;
+      margin-bottom: 2%;
+      position: absolute;
+      border-radius: 42px;
+      opacity: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 80%;
+      height: 97%;
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+  }
+  .text {
+    margin-top: 10px;
+    font-weight: 100;
+  }
+}
