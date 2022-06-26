@@ -45,7 +45,7 @@ const Work = () => {
   return (
     <div>
       <h2 className='head-text'>
-        My <span>Projects</span>
+        My<span> Projects</span>
       </h2>
 
       <motion.div
