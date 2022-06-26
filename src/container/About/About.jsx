@@ -40,8 +40,7 @@ const About = () => {
   return (
     <>
       <h2 className='head-text'>
-        My
-        <span> Skills</span>
+        My <span>Skills</span>
       </h2>
       <div className='app__profiles'>
         {abouts.map((about, index) => (
