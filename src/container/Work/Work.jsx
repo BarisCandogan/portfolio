@@ -1,13 +1,12 @@
 import React from 'react'
 import './Work.scss'
 import { AiFillGithub } from 'react-icons/ai'
-import { animate, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { AppWrap } from '../../wrapper'
 import { images } from '../../constans'
 import { useState } from 'react'
 
 const Work = () => {
-  const [activeFilter, setActiveFilter] = useState('All')
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 })
 
   const works = [
@@ -29,12 +28,22 @@ const Work = () => {
       url: 'https://project-a1436.web.app',
       github: 'https://github.com/BarisCandogan/gmail-project',
     },
+    {
+      title: 'Quiz App',
+      imgUrl: images.quiz,
+      url: 'https://inspiring-flan-66d1d0.netlify.app',
+      github: 'https://github.com/BarisCandogan/quizApp',
+    },
+    {
+      title: 'Snake App',
+      imgUrl: images.snake,
+      url: 'https://warm-belekoy-d16765.netlify.app/',
+      github: 'https://github.com/BarisCandogan/snake-game',
+    },
   ]
 
-  const handleWorkFilter = (item) => {}
-
   return (
-    <>
+    <div>
       <h2 className='head-text'>
         My <span>Projects</span>
       </h2>
@@ -51,6 +60,7 @@ const Work = () => {
                 <img src={work.imgUrl} alt={work.name} />
               </a>
               <a href={work.url}>
+                <br />
                 <motion.div
                   whileHover={{ opacity: [0, 1] }}
                   transition={{
@@ -60,19 +70,28 @@ const Work = () => {
                   }}
                   className='app__work-hover app__flex'
                 >
-                  <a style={{ color: 'white' }} href={work.github}>
-                    <AiFillGithub />
-                  </a>
+                  Project site
                 </motion.div>
               </a>
             </div>
+            <a
+              style={{
+                color: 'black',
+                fontStyle: 'oblique',
+              }}
+              href={work.github}
+            >
+              <AiFillGithub />
+              <br />
+              Source Code
+            </a>
 
             <div className='text'>{work.title}</div>
           </div>
         ))}
       </motion.div>
-    </>
+    </div>
   )
 }
 
-export default AppWrap(Work, 'work')
+export default AppWrap(Work, 'projects')

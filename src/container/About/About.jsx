@@ -2,39 +2,46 @@ import React from 'react'
 import './About.scss'
 import { motion } from 'framer-motion'
 import { images } from '../../constans'
+import { AppWrap } from '../../wrapper'
 
 const About = () => {
   const abouts = [
     {
-      title: 'Web Development',
-      description: 'I am a good web developer',
-      imgUrl: images.about01,
+      title: 'React.Js',
+      imgUrl: images.react,
     },
     {
-      title: 'Frontend Development',
-      description: 'I am a good web developer',
-      imgUrl: images.about02,
+      title: 'Javascript',
+      imgUrl: images.javascript,
     },
 
     {
-      title: 'Web Design',
-      description: 'I am a good web developer',
-      imgUrl: images.about03,
+      title: 'Redux',
+      imgUrl: images.redux,
     },
     {
-      title: 'Web Animations',
-      description: 'I am a good web developer',
-      imgUrl: images.about04,
+      title: 'Firebase',
+      imgUrl: images.firebase,
+    },
+    {
+      title: 'Css',
+      imgUrl: images.css,
+    },
+    {
+      title: 'Sass',
+      imgUrl: images.sass,
+    },
+    {
+      title: 'Html',
+      imgUrl: images.html,
     },
   ]
+
   return (
     <>
       <h2 className='head-text'>
-        I Know Text
-        <span> Good Development</span>
-        <br />
-        means
-        <span> Good Business</span>
+        My
+        <span> Skills</span>
       </h2>
       <div className='app__profiles'>
         {abouts.map((about, index) => (
@@ -46,12 +53,9 @@ const About = () => {
             key={about.title + index}
           >
             <img src={about.imgUrl} alt={about.title} />
-            <h2 className='bolf-text' style={{ marginTop: 20 }}>
+            <h2 className='bolf-text' style={{ textAlign: 'center' }}>
               {about.title}
             </h2>
-            <p className='p-text' style={{ marginTop: 10 }}>
-              {about.description}
-            </p>
           </motion.div>
         ))}
       </div>
@@ -59,4 +63,4 @@ const About = () => {
   )
 }
 
-export default About
+export default AppWrap(About, 'skills')
